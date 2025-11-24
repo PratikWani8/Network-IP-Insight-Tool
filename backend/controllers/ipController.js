@@ -27,7 +27,9 @@ export const lookupIP = async (req, res) => {
       meta: {
         city: data.city,
         country: data.country_name,
-        org: data.org
+        org: data.org,
+        latitude: data.latitude,
+        longitude: data.longitude
       }
     });
 
