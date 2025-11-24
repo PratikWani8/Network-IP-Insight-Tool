@@ -1,0 +1,305 @@
+ @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;500&display=swap');
+
+        :root {
+            --bg: #f8faff;
+            --accent: #0078ff;
+            --accent2: #00c6a2;
+            --text: #0b1a2d;
+            --card: #ffffff;
+            --input-bg: #f1f4f9;
+            --input-border: #ccd6e3;
+            --error: #e53935;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .tool {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            animation: var(--slide);
+        }
+
+        /* ---- HEADER ---- */
+        .intro {
+            text-align: center;
+            margin-bottom: 25px;
+            animation: floatAnim var(--float-speed) ease-in-out infinite alternate;
+        }
+
+        .intro h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent);
+            font-size: clamp(1.4rem, 3vw, 2rem);
+        }
+
+        .intro p {
+            font-size: clamp(0.9rem, 2.2vw, 1.2rem);
+            max-width: 700px;
+            margin: 5px auto 0;
+            color: #444;
+            opacity: 0;
+            animation: fadeIn 1.3s ease forwards 0.4s;
+        }
+
+
+        .pppp {
+            display: flex;
+            flex-direction: row;
+            gap: 25px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* Main container */
+        .container,
+        .container-2 {
+            background-color: var(--card);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            padding: 25px;
+            width: 100%;
+            max-width: 460px;
+            animation: fadeIn 0.9s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            margin: 0 0 10px;
+        }
+
+        /* INPUT FORM */
+
+        form,
+        .input-group {
+            display: flex;
+            margin-top: 18px;
+            background-color: var(--input-bg);
+            border: 1px solid var(--input-border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px;
+            font-size: 0.95rem;
+            background: transparent;
+            border: none;
+            color: var(--text);
+            outline: none;
+        }
+
+        button {
+            background: linear-gradient(90deg, var(--accent2), var(--accent));
+            border: none;
+            color: #fff;
+            font-weight: 500;
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            white-space: nowrap;
+        }
+
+        button:hover {
+            opacity: 0.9;
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        .results {
+            margin-top: 20px;
+            text-align: left;
+            font-family: monospace;
+            font-size: 0.95rem;
+            background: rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        /* Chart box */
+        #chartContainer {
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.03);
+            padding: 12px;
+            border-radius: 10px;
+            height: 220px;
+        }
+
+        /* Map in second section */
+        #map {
+            height: 340px;
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 20px;
+            background: #dfe7f3;
+        }
+        
+        /* Copy popup */
+        .copy-btn {
+            margin-top: 10px;
+            padding: 10px 14px;
+            background: linear-gradient(90deg, var(--accent2), var(--accent));
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.3s ease;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            /* spacing between icon and text */
+        }
+
+        .copy-btn:hover {
+            opacity: 0.9;
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        /* Popup */
+        .copy-popup {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(90deg, #00c671, #00a65a);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 10px;
+            font-size: 1rem;
+            opacity: 0;
+            transform: translateY(-15px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            z-index: 9999;
+        }
+
+        .copy-popup.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+
+        /* Tablet */
+        @media (max-width: 900px) {
+            .pppp {
+                flex-direction: column;
+                align-items: center;
+            }
+
+             .copy-btn {
+                font-size: 0.75rem;
+                padding: 5px 10px;
+            }
+
+            .copy-popup {
+                top: 15px;
+                right: 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Large phones */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            button {
+                width: 100%;
+                font-size: 1rem;
+            }
+
+            input {
+                min-width: 70%;
+            }
+
+            #chartContainer {
+                height: 180px;
+            }
+
+            #map {
+                height: 300px;
+            }
+
+            .copy-btn {
+                padding: 5px 9px;
+                font-size: 0.75rem;
+                width: auto;
+                max-width: 20%;
+            }
+
+            .copy-popup {
+                right: 50%;
+                transform: translateX(50%) translateY(-15px);
+                font-size: 0.85rem;
+                padding: 10px 14px;
+            }
+
+            .copy-popup.show {
+                transform: translateX(50%) translateY(0);
+            }
+        }
+
+        /* Small phones */
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.25rem;
+            }
+
+            body {
+                padding: 10px;
+            }
+
+            .container,
+            .container-2 {
+                padding: 18px;
+            }
+
+             .copy-btn {
+                padding: 4px 8px;
+                font-size: 0.7rem;
+                width: auto;
+                max-width: 20%;
+            }
+
+            .copy-popup {
+                width: auto;
+                max-width: 90%;
+                left: 50%;
+                right: unset;
+                transform: translateX(-50%) translateY(-15px);
+                text-align: center;
+            }
+
+            .copy-popup.show {
+                transform: translateX(-50%) translateY(0);
+            }
+        }
