@@ -26,7 +26,9 @@ Helps engineers to diagnose DNS/IP issues, visualize IP locations, test configur
 ## 🛠️ Tech Stack
 - **Frontend :** React, Vite, Chart.js, Leaflet
 
-- **Backend :** Node.js, Express, MongoDB
+- **Backend :** Node.js, Express
+
+- **Database :** MongoDB
 
 - **APIs :** Google DNS-over-HTTPS, IPAPI
 
