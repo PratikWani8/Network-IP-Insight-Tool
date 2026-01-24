@@ -94,8 +94,6 @@
             margin: 0 0 10px;
         }
 
-        /* INPUT FORM */
-
         form,
         .input-group {
             display: flex;
@@ -143,7 +141,6 @@
             padding: 12px;
         }
 
-        /* Chart box */
         #chartContainer {
             margin-top: 20px;
             background: rgba(0, 0, 0, 0.03);
@@ -152,7 +149,6 @@
             height: 220px;
         }
 
-        /* Map in second section */
         #map {
             height: 340px;
             width: 100%;
@@ -160,8 +156,7 @@
             margin-top: 20px;
             background: #dfe7f3;
         }
-        
-        /* Copy popup */
+
         .copy-btn {
             margin-top: 10px;
             padding: 10px 14px;
@@ -176,7 +171,6 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            /* spacing between icon and text */
         }
 
         .copy-btn:hover {
@@ -184,7 +178,6 @@
             box-shadow: 0 0 10px var(--accent);
         }
 
-        /* Popup */
         .copy-popup {
             position: fixed;
             top: 20px;
@@ -205,9 +198,6 @@
             transform: translateY(0);
         }
 
-        /* ===== RESPONSIVE BREAKPOINTS ===== */
-
-        /* Tablet */
         @media (max-width: 900px) {
             .pppp {
                 flex-direction: column;
@@ -226,7 +216,6 @@
             }
         }
 
-        /* Large phones */
         @media (max-width: 600px) {
             h1 {
                 font-size: 1.5rem;
@@ -268,7 +257,6 @@
             }
         }
 
-        /* Small phones */
         @media (max-width: 400px) {
             h1 {
                 font-size: 1.25rem;
